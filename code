@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int a[25], i=1;
+int rev(int n)
+{
+  int div, mod, j;
+
+  mod = n%10;
+
+  a[i] = mod;
+
+  div  = n/10;
+
+  if(div>10)
+  {
+    i++;
+    rev(div);
+
+  }else
+  {
+    i++;
+    a[i] = div;
+
+    for(j=1;j<=i;j++)
+    {
+      printf("%d", a[j]);
+    }
+  }
+}
+
+main()
+{
+  int n;
+  scanf("%d", &n);
+
+  rev(n);
+
+}
